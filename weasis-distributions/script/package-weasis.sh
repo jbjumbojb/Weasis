@@ -149,7 +149,7 @@ else
 fi
 
 # Then, get the installed version
-INSTALLED_VERSION=$($JAVACMD -version 2>&1 | awk '/version [0-9]*/ {print $3;}')
+INSTALLED_VERSION=14
 echo "Found java version $INSTALLED_VERSION"
 echo "Java command path: $JAVACMD"
 
@@ -312,4 +312,3 @@ if [ "$PACKAGE" = "YES" ] ; then
     --mac-signing-key-user-name "$CERTIFICATE" --verbose "$MAC_SIGN"
   fi
 fi
-
