@@ -276,7 +276,7 @@ rm -f "$OUT_APP/$NAME.cfg.bck"
 
 
 if [ "$machine" = "linux" ] ; then
-  cp "$RES/Dicomizer.desktop" "$OUTPUT_PATH_UNIX/$NAME/lib/Dicomizer.desktop"
+  cp "$RES/Dicomizer.desktop" "$OUTPUT_PATH_UNIX/$NAME/lib/weasis-Dicomizer.desktop"
 elif [ "$machine" = "windows" ] ; then
   # Fix icon of second launcher
   cp "$RES/Dicomizer.ico" "$OUTPUT_PATH_UNIX/$NAME/Dicomizer.ico"
@@ -307,7 +307,7 @@ if [ "$PACKAGE" = "YES" ] ; then
       --linux-menu-group "Viewer;MedicalSoftware;Graphics;" --linux-app-category "science" --linux-shortcut --verbose
     done
   elif [ "$machine" = "macosx" ] ; then
-    $JPKGCMD --package-type "pkg" --app-image "$IMAGE_PATH.app" --dest "$OUTPUT_PATH" --name "$NAME" --resource-dir "$RES/pkg" \
+    $JPKGCMD --package-type "pkg" --app-image "$IMAGE_PATH.app" --dest "$OUTPUT_PATH" --name "$NAME" --resource-dir "$RES" \
     --license-file "$INPUT_PATH/Licence.txt" --copyright "$COPYRIGHT" --app-version "$WEASIS_CLEAN_VERSION" --mac-package-identifier "$IDENTIFIER" \
     --mac-signing-key-user-name "$CERTIFICATE" --verbose "$MAC_SIGN"
   fi
